@@ -1,39 +1,29 @@
 package main
 
 import (
+	"math/big"
 	"fmt"
 )
 
-/*func vozvedenieVStepen(x, y *big.Int) *big.Int { //Функция рекурсивного возведения безнакового целочисленного значения  в  положительную степень
-	temp:=new(big.Int)
-	tempSub:=new(big.Int)
-	z:= big.NewInt(0)
-	odin:=big.NewInt(1)
-	if y ==z{
+func vozvedenieVStepen(x, y *big.Float) *big.Float { //Функция рекурсивного возведения безнакового целочисленного значения  в  положительную степень
+	temp:=new(big.Float)
+	tempSub:=new(big.Float)
+	zero:= big.NewFloat(0)
+	odin:=big.NewFloat(1)
+	if y.Cmp(zero)==0{
 		return odin
-	} else if y == odin {
+	} else if y.Cmp(odin)==0 {
 		return x
 	} else {
-		temp.Mul(x , vozvedenieVStepen(x, tempSub.Sub(y,odin)))
-		return temp
-	}
-}*/
-func vozvedenieVStepen(x, y int64) int64 { //Функция рекурсивного возведения безнакового целочисленного значения  в  положительную степень
-
-	if y ==0{
-		return 1
-	} else if y == 1 {
-		return x
-	} else {
-
-		return (x * vozvedenieVStepen(x, y-1))
+		return temp.Mul(x , vozvedenieVStepen(x, tempSub.Sub(y,odin)))// Mul
 	}
 }
 
 func main() {
+	x:=big.NewFloat(2)
+	y:=big.NewFloat(100)
+	fmt.Println(vozvedenieVStepen(x,y))
 
-	fmt.Println(vozvedenieVStepen(2, 50))
-	fmt.Println("Hello world")
 
 }
 
