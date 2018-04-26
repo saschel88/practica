@@ -33,6 +33,7 @@ func vozvedenieVStepen(x, y int64) int64 { //Функция рекурсивно
 func main() {
 
 	fmt.Println(vozvedenieVStepen(2, 50))
+	fmt.Println("Hello world")
 
 }
 
